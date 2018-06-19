@@ -1,0 +1,8 @@
+server:
+  port: 8080
+
+tracing:
+  jaegerUrl: http://${JAEGER_HOST}:14268/api/traces
+
+service:
+  helloHost: ${HELLO_SERVICE_HOST}

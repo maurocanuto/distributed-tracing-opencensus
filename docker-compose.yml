@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+  jaeger:
+    image: "jaegertracing/all-in-one:latest"
+    ports:
+      - "5775:5775/udp"
+      - "6831:6831/udp"
+      - "6832:6832/udp"
+      - "5778:5778"
+      - "16686:16686"
+      - "14268:14268"
+      - "9411:9411"
+
+  hello-service:
+    build: ./hello-service
+    ports:
+      - "8888:8888"
+    environment:
+      JAEGER_HOST: jaeger
+    links:
+      - jaeger
+
+  greetings-service:
+    build: ./greetings-service
+    ports:
+      - "8080:8080"
+    environment:
+      HELLO_SERVICE_HOST: hello-service
+      JAEGER_HOST: jaeger
+    links:
+       - hello-service
+       - jaeger
+
+
+
