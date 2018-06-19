@@ -26,8 +26,8 @@ When calling this endpoint, this service calls the _hello-service_ and returns t
 
 When a request is process, traces are sent to Jaeger tool where you will get a detailed view of the operation. You can access at http://localhost:16686/
 
-![](https://image.ibb.co/fdXYsy/jaeger.png)
-![](https://image.ibb.co/cVzeXy/jaeger_trace_details.png)
+![](https://image.ibb.co/fdXYsy/jaeger.png =250x250)
+![](https://image.ibb.co/cVzeXy/jaeger_trace_details.png =250x250)
 
 ### Build/run the example
 Example can be run with docker-compose.
